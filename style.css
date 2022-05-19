@@ -2,28 +2,43 @@
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
-    background-color: gray;
+    background-color: lightblue;
 }
 .flex-item{
     flex-basis: 200px;
     padding: 20px;
     margin: 20px;
-    background-color: darkgray;
+    background-color: rgb(6, 76, 48);
     font-size: 2rem;
     font-family: sans-serif;
     text-align: center;
 }
 #ok{
-    color: red;
-    border: 2px solid red;
+    color: rgb(141, 191, 237);
+    border: 2px solid rgb(229, 185, 75);
 }
 #cancel{
     color: white;
-    background-color:black;
+    background-color:rgb(79, 7, 89);
 }
 .toggleOn{
     background-color:white;
 }
 .toggleOff{
     background-color: darkgray;
+}
+.output-container{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content:center;
+    background-color: lightcoral;
+}
+.output-flex-item{
+    flex-basis: 200px;
+    padding: 20px;
+    margin: 20px;
+    background-color: lightcyan;
+    font-size: 3rem;
+    font-family: sans-serif;
+    text-align: center;
 }

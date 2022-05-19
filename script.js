@@ -22,18 +22,18 @@
 //     document.getElementById('no').classList.add('toggleOn')
 // })
 
-document.getElementById('ok').addEventListener('click', function(e) {
-    let noElement = document.getElementById('no')
-    if (noElement.classList.contains('toggleOn')) {
-        noElement.classList.replace('toggleOn', 'toggleOff')
-    }
-    else if (noElement.classList.contains('toggleOff')) {
-        noElement.classList.replace('toggleOff', 'toggleOn')
-    }
-    else {
-        noElement.classList.add('toggleOn')
-    }
-})
+// document.getElementById('ok').addEventListener('click', function(e) {
+//     let noElement = document.getElementById('no')
+//     if (noElement.classList.contains('toggleOn')) {
+//         noElement.classList.replace('toggleOn', 'toggleOff')
+//     }
+//     else if (noElement.classList.contains('toggleOff')) {
+//         noElement.classList.replace('toggleOff', 'toggleOn')
+//     }
+//     else {
+//         noElement.classList.add('toggleOn')
+//     }
+// })
 // var borderTick = 33
 // document.getElementById('cancel').style.border =`${borderTick}px solid white`
 
@@ -46,16 +46,16 @@ document.getElementById('ok').addEventListener('click', function(e) {
 //     document.getElementById('no').style.margin = marSize
 // })
 
-let showText = ['ok','วิชานี้','ง่าย','จริงๆ นะ']
-let showIndex = 0;
-document.getElementById('no').addEventListener('dblclick', function(){
-    showIndex++
-    if (showIndex >= showText.length) {
-        showIndex = 0;
-    }
-    console.log(`show index = ${showIndex}`)
-    const elem = document.getElementById('ok')
-    elem.innerText = showText[showIndex]
+// let showText = ['ok','วิชานี้','ง่าย','จริงๆ นะ']
+// let showIndex = 0;
+// document.getElementById('no').addEventListener('dblclick', function(){
+//     showIndex++
+//     if (showIndex >= showText.length) {
+//         showIndex = 0;
+//     }
+//     console.log(`show index = ${showIndex}`)
+//     const elem = document.getElementById('ok')
+//     elem.innerText = showText[showIndex]
 
     // console.log(elem.innerText)
     // if (elem.innerText === 'ok') {
@@ -70,4 +70,48 @@ document.getElementById('no').addEventListener('dblclick', function(){
     // else if ( elem.innerTex ==='จริงๆ นะ') {
     //     elem.innerTex ='ok'
     // }
-})
+// })
+///function
+let output = ' '
+let outputElements = document.getElementById('output')
+
+function addText(input){
+    output = output + input + ' ' 
+    outputElements.innerText = output
+}
+function onOKClick(e) {
+    e.stopPropagation();
+    // alert('ok clicked')
+    // output = output + ' OK '
+    // outputElements.innerText = output
+    addText(' OK ')
+}
+function onCancelClick(e) {
+    e.stopPropagation();
+    // alert('cancel clicked')
+    // output = output + ' Cancel '
+    // outputElements.innerText = output
+    addText(' Cancel ')
+}
+function onNoClick(e) {
+    e.stopPropagation();
+    // alert('no clicked')
+    // output = output + ' No '
+    // outputElements.innerText = output
+    addText(' No ')
+}
+
+document.getElementById('container').onclick = function(){
+    output = ' '
+    outputElements.innerText = output
+}
+document.getElementById('cancel').addEventListener('click',onCancelClick)
+document.getElementById('no').onclick = onNoClick
+// document.getElementById('container').onclick = function(e) {
+//     alert('container clicked')
+// }
+
+
+
+
+
