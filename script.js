@@ -34,13 +34,40 @@ document.getElementById('ok').addEventListener('click', function(e) {
         noElement.classList.add('toggleOn')
     }
 })
-var borderTick = 33
-document.getElementById('cancel').style.border =`${borderTick}px solid white`
-let mar = 20
-mar = mar + 1
-document.getElementById('ok').addEventListener('click', function(e){
-    mar += 2
-    var marSize = `20px ${mar}px`
-    document.getElementById('cancel').style.margin = marSize
-    document.getElementById('no').style.margin = marSize
+// var borderTick = 33
+// document.getElementById('cancel').style.border =`${borderTick}px solid white`
+
+// let mar = 20
+// mar = mar + 1
+// document.getElementById('ok').addEventListener('click', function(e){
+//     mar += 2
+//     var marSize = `20px ${mar}px`
+//     document.getElementById('cancel').style.margin = marSize
+//     document.getElementById('no').style.margin = marSize
+// })
+
+let showText = ['ok','วิชานี้','ง่าย','จริงๆ นะ']
+let showIndex = 0;
+document.getElementById('no').addEventListener('dblclick', function(){
+    showIndex++
+    if (showIndex >= showText.length) {
+        showIndex = 0;
+    }
+    console.log(`show index = ${showIndex}`)
+    const elem = document.getElementById('ok')
+    elem.innerText = showText[showIndex]
+
+    // console.log(elem.innerText)
+    // if (elem.innerText === 'ok') {
+    //     elem.innerText = 'วิชานี้'
+    // }
+    // else if ( elem.innerText ==='วิชานี้') {
+    //     elem.innerText ='ง่าย'
+    // }
+    // else if ( elem.innerTex ==='ง่าย') {
+    //     elem.innerTex ='จริงๆ นะ'
+    // }
+    // else if ( elem.innerTex ==='จริงๆ นะ') {
+    //     elem.innerTex ='ok'
+    // }
 })
