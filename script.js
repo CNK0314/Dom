@@ -105,12 +105,24 @@ document.getElementById('container').onclick = function(){
     output = ' '
     outputElements.innerText = output
 }
-document.getElementById('cancel').addEventListener('click',onCancelClick)
-document.getElementById('no').onclick = onNoClick
+// document.getElementById('cancel').addEventListener('click',onCancelClick)
+// document.getElementById('no').onclick = onNoClick
 // document.getElementById('container').onclick = function(e) {
 //     alert('container clicked')
 // }
 
+let keyword = {
+    'ok':'OK',
+    'cancel':'Cancel',
+    'no':'No'
+}
+let elems = getElementsByClassName('flex-item')
+for(let elem of elems) {
+    elem.addEventListener('click', function(e){
+        e.stopPropagation()
+        addText(keyword[elem.innerText])
+    })
+}
 
 
 
